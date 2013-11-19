@@ -11,16 +11,17 @@ On OS X this is easy using Homebrew:
 
 Install the gem:
 
-    gem install pdf2html
+    $ gem install pdf2html
 
 ## Usage
 
-    Pdf2Html.convert({
-      pdf:      "/home/dev/meow.pdf",
-      dest_dir: "/home/dev/precious_html",
-      zoom:     1.5
-    })
-
+```ruby
+Pdf2Html.convert({
+  pdf:      "/home/dev/meow.pdf",
+  dest_dir: "/home/dev/precious_html",
+  zoom:     1.5
+})
+```
 ### All params to date:
 
       data_dir:             "--data-dir",
