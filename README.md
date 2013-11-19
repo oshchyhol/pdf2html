@@ -1,6 +1,6 @@
 # Pdf2html
 
-Ruby interface to [pdf2htmlex](https://github.com/coolwanglu/pdf2htmlEX). Will utilize posix_spawn if available.
+Ruby wrapper for the awesome [pdf2htmlex](https://github.com/coolwanglu/pdf2htmlEX). Will utilize posix_spawn if available.
 
 ## Installation
 
