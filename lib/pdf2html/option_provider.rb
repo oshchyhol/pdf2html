@@ -55,7 +55,7 @@ module Pdf2Html
     def to_s
       return "" if @keys.empty?
 
-      @options_string ||= ""
+      @options_string = ""
       @options.each do |key, val|
         @options_string = @options_string + "#{PDF2HTMLEX_OPTIONS[key]} #{key.to_sym.inspect.to_s} "
       end

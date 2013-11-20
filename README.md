@@ -1,6 +1,6 @@
 # Pdf2html
 
-Ruby wrapper for the awesome [pdf2htmlex](https://github.com/coolwanglu/pdf2htmlEX). Will utilize posix_spawn if available.
+Ruby wrapper for the awesome [pdf2htmlex](https://github.com/coolwanglu/pdf2htmlEX). Will utilize `posix_spawn` if available.
 
 ## Installation
 
@@ -24,6 +24,7 @@ Pdf2Html.convert({
 ```
 ### All params to date:
 
+      pdf:                  <input.pdf>
       data_dir:             "--data-dir",
       first_page:           "--first-page",
       last_page:            "--last-page",
