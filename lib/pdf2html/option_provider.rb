@@ -1,9 +1,10 @@
 module Pdf2Html
+  PDF2HTMLEX_ARGS = [":pdf", ":html"]
+
   PDF2HTMLEX_OPTIONS = {
     zoom:                 "--zoom",
     data_dir:             "--data-dir",
     dest_dir:             "--dest-dir",
-    pdf:                  "",
     first_page:           "--first-page",
     last_page:            "--last-page",
     fit_width:            "--fit-width",
@@ -45,26 +46,23 @@ module Pdf2Html
   }
 
   class OptionProvider
-    attr_reader :keys#, :switches
+    attr_reader :keys
 
-    def initialize(options = {})
+    def initialize(args, options = {})
       @keys = PDF2HTMLEX_OPTIONS.keys & options.keys
       @options = normalize_options(options)
+      @args = args
     end
 
     def to_s
       return "" if @keys.empty?
 
-      @options_string = ""
-      @options.each do |key, val|
-        @options_string = @options_string + "#{PDF2HTMLEX_OPTIONS[key]} #{key.to_sym.inspect.to_s} "
-      end
-
-      @options_string
+      (array_from_options(@options, PDF2HTMLEX_OPTIONS) + 
+        PDF2HTMLEX_ARGS).join(" ")
     end
 
     def to_h
-      @options
+      @options.merge(@args)
     end
 
     private
@@ -75,6 +73,12 @@ module Pdf2Html
       @keys.inject({}) do |hash, f| 
         hash[f] = options[f].to_s unless options[f].nil?
         hash
+      end
+    end
+
+    def array_from_options(hash, opts = hash)
+      hash.flat_map do |key, val|
+        [opts[key].to_s, key.to_sym.inspect.to_s]
       end
     end
   end
