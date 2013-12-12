@@ -16,15 +16,12 @@ Install the gem:
 ## Usage
 
 ```ruby
-Pdf2Html.convert({
-  pdf:      "/home/dev/meow.pdf",
-  dest_dir: "/home/dev/precious_html",
-  zoom:     1.5
-})
-```
-### All params to date:
+Pdf2Html.convert '/home/dev/meow.pdf', dest_dir: '/home/dev/public/', zoom: 1.5
 
-      pdf:                  <input.pdf>
+Pdf2Html.convert '/home/dev/meow.pdf', { dest_dir: '/home/dev/public/', zoom: 1.5 }, "your_awesome_optional_html_filename.html"
+```
+### All options to date:
+
       data_dir:             "--data-dir",
       first_page:           "--first-page",
       last_page:            "--last-page",
@@ -66,5 +63,4 @@ Pdf2Html.convert({
       debug:                "--debug"
 
 ## Work harder
-
-
+Aleksandr Schigol
