@@ -42,7 +42,8 @@ module Pdf2Html
     user_password:        "--user-password",
     no_drm:               "--no-drm",
     clean_tmp:            "--clean-tmp",
-    debug:                "--debug"
+    debug:                "--debug",
+    proof:                "--proof"
   }
 
   class OptionProvider
